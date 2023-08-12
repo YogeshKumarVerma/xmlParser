@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<document>
+<req1>
+    <number>5</number>
+    <ip>192.168.0.1</ip>
+</req1>
+<req2>
+    <name>MUKUL</name>
+    <salary>101</salary>
+</req2>
+<req3>
+    <id>30</id>
+    <id>33</id>
+    <id>44</id>
+</req3>
+</document>

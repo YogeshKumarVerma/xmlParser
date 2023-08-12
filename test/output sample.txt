@@ -1,0 +1,21 @@
+D:\C Projects\xmlParser\test>make
+gcc -g -Wall -Wimplicit -std=c99 -I.//../inc -I/usr/include/libxml2/ -DPRIVATE=static -c -o ../test/test.o ../test/test.c
+gcc -g -Wall -Wimplicit -std=c99  .//../src/xml_parser.o  .//../test/test.o -L. -o xmlUtil.elf -lxml2
+
+D:\C Projects\xmlParser\test>xmlUtil.elf
+TEST STARTED
+root element=document
+reading node <req1>
+
+req1.number=5
+req1.ip=192.168.0.1
+
+reading node <req2>
+req2.name=MUKUL68.0.1
+req2.salary=101
+
+reading node <req3>
+req3.id[2]=44
+req3.id[1]=33
+req3.id[0]=30
+TEST FINISHED
