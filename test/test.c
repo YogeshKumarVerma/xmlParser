@@ -7,6 +7,7 @@ void testXmlParser(void)
     printf("TEST STARTED\n");
     char     lStr[256] = {0};
     uint32   lU32 = 0;
+    bool     lBool = false;
     xmlNode *lpNode = NULL;
     xmlDoc  *lpDoc  = xmlGetDocNode(XML_FILE_NAME);
     xmlNode *lpRoot = xmlGetRootElement(lpDoc);
@@ -44,6 +45,9 @@ void testXmlParser(void)
 
     if(xmlGetChildValByIdx(lpNode, "id", 4, (void *)&lU32, XML_DATA_TYPE_UINT32))
         printf("req3.id[4]=%u\n", lU32);
+
+    if(xmlGetChildVal(lpNode, "bool_true", (void *)&lBool, XML_DATA_TYPE_BOOL))
+        printf("req3.bool_true=%u\n", lBool);
 
     printf("TEST FINISHED\n");
 }

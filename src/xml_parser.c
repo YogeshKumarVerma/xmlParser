@@ -6,6 +6,7 @@
 #ifndef PRIVATE
 #define PRIVATE                 static
 #endif
+
 //#define XML_LOG_LEVEL_DBG
 #if defined(XML_LOG_LEVEL_DBG)
 #define XML_LOG_DBG(_fmt, ...)        printf("[%04d][XML.DBG] "_fmt"\n", __LINE__, ##__VA_ARGS__)
@@ -43,7 +44,7 @@
 /*---------------------------------------------------------------------------*/
 /*                    Local Function Prototypes                              */
 /*---------------------------------------------------------------------------*/
-PRIVATE char* xmlToUpperCase(char *apStr);
+//PRIVATE char* xmlToUpperCase(char *apStr);
 PRIVATE char* xmlTrimString(char *apStr);
 
 PRIVATE xmlErrCode_e xmlStrToVal(char *apStr, void *apVal, xmlDataType_e aValType);
@@ -468,7 +469,7 @@ xmlErrCode_e xmlGetNodeValByPath(xmlNode *apRoot, const char *apPath, void *apVa
 /*---------------------------------------------------------------------------*/
 /*                    Local Function Definitions                             */
 /*---------------------------------------------------------------------------*/
-PRIVATE char* xmlToUpperCase(char *apStr)
+/*PRIVATE char* xmlToUpperCase(char *apStr)
 {
     for(uint32 idx = 0; idx < strlen(apStr); idx++) 
     {
@@ -479,7 +480,7 @@ PRIVATE char* xmlToUpperCase(char *apStr)
    }
 
    return apStr;
-}
+}*/
 
 PRIVATE char* xmlTrimString(char *apStr)
 {
@@ -507,7 +508,7 @@ PRIVATE xmlErrCode_e xmlStrToVal(char *apStr, void *apVal, xmlDataType_e aValTyp
     {
         case XML_DATA_TYPE_BOOL:
         {
-            if(0 == XML_STRCMP(xmlToUpperCase(lpValStr), XML_STR_TRUE))
+            if(0 == XML_STRCMP(lpValStr, XML_STR_TRUE))
             {
                 *((bool *)apVal) = true;
             }
