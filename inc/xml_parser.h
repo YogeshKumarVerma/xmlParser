@@ -111,6 +111,8 @@ struct xmlNode {
 
 /* external function prototypes */
 /* function prototypes for reading xmlNode */
+void xmlFreeDocNode(xmlDoc *apDoc);
+
 xmlDoc*  xmlGetDocNode(const char *apFileName);
 xmlNode* xmlGetRootElement(xmlDoc *apDoc);
 xmlNode* xmlGetChildElements(xmlNode *apNode, uint32 *apChildCnt);

@@ -52,6 +52,7 @@ void testXmlParser(void)
     if(xmlGetAttrVal(lpNode, "author", (void *)&lStr, XML_DATA_TYPE_STRING))
         printf("req3 attr=author, val=%s\n", lStr);
 
+    xmlFreeDocNode(lpDoc);
     printf("TEST FINISHED\n");
 }
 

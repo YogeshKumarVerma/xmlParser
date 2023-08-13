@@ -38,7 +38,7 @@
 #define XML_STRCMP(s1, s2)      (strlen(s1) == strlen(s2) ? strncmp(s1, s2, strlen(s1)) : 1)
 
 /*---------------------------------------------------------------------------*/
-/*                    Global Variables Definitions                            */
+/*                    Global Variables Definitions                           */
 /*---------------------------------------------------------------------------*/
 
 /*---------------------------------------------------------------------------*/
@@ -52,6 +52,18 @@ PRIVATE xmlErrCode_e xmlStrToVal(char *apStr, void *apVal, xmlDataType_e aValTyp
 /*---------------------------------------------------------------------------*/
 /*                    Global Function Definitions                            */
 /*---------------------------------------------------------------------------*/
+void xmlFreeDocNode(xmlDoc *apDoc)
+{
+    if(NULL == apDoc)
+    {
+        XML_LOG_ERR("apDoc is NULL, cannot free document");
+    }
+    else
+    {
+        xmlFreeDoc(apDoc);
+    }
+}
+
 xmlDoc*  xmlGetDocNode(const char *apFileName)
 {
     xmlDoc *lpDoc = NULL;
