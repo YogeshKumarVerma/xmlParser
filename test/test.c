@@ -49,6 +49,9 @@ void testXmlParser(void)
     if(xmlGetChildVal(lpNode, "bool_true", (void *)&lBool, XML_DATA_TYPE_BOOL))
         printf("req3.bool_true=%u\n", lBool);
 
+    if(xmlGetAttrVal(lpNode, "author", (void *)&lStr, XML_DATA_TYPE_STRING))
+        printf("req3 attr=author, val=%s\n", lStr);
+
     printf("TEST FINISHED\n");
 }
 
