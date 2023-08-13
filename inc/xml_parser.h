@@ -36,8 +36,8 @@ typedef uint32_t int32;
 
 typedef enum
 {
-    XML_E_SUCCESS,
     XML_E_FAILURE,
+    XML_E_SUCCESS,
     XML_E_FILE_NOT_FOUND,
     XML_E_TAG_NOT_FOUND,
     XML_E_INVALID_TYPE,

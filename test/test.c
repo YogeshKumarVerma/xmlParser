@@ -33,14 +33,17 @@ void testXmlParser(void)
     printf("\nreading node <req3>\n");
     lpNode = xmlGetChildElementByName(lpRoot, "req3");
 
-    xmlGetChildValByIdx(lpNode, "id", 2, (void *)&lU32, XML_DATA_TYPE_UINT32);
-    printf("req3.id[2]=%u\n", lU32);
+    if(xmlGetChildValByIdx(lpNode, "id", 2, (void *)&lU32, XML_DATA_TYPE_UINT32))
+        printf("req3.id[2]=%u\n", lU32);
 
-    xmlGetChildValByIdx(lpNode, "id", 1, (void *)&lU32, XML_DATA_TYPE_UINT32);
-    printf("req3.id[1]=%u\n", lU32);
+    if(xmlGetChildValByIdx(lpNode, "id", 1, (void *)&lU32, XML_DATA_TYPE_UINT32))
+        printf("req3.id[1]=%u\n", lU32);
 
-    xmlGetChildValByIdx(lpNode, "id", 0, (void *)&lU32, XML_DATA_TYPE_UINT32);
-    printf("req3.id[0]=%u\n", lU32);
+    if(xmlGetChildValByIdx(lpNode, "id", 0, (void *)&lU32, XML_DATA_TYPE_UINT32))
+        printf("req3.id[0]=%u\n", lU32);
+
+    if(xmlGetChildValByIdx(lpNode, "id", 4, (void *)&lU32, XML_DATA_TYPE_UINT32))
+        printf("req3.id[4]=%u\n", lU32);
 
     printf("TEST FINISHED\n");
 }
