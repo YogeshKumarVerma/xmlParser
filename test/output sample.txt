@@ -11,7 +11,7 @@ req1.number=5
 req1.ip=192.168.0.1
 
 reading node <req2>
-req2.name=MUKUL68.0.1
+req2.name=MUKUL
 req2.salary=101
 
 reading node <req3>

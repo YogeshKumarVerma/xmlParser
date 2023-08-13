@@ -532,7 +532,7 @@ PRIVATE xmlErrCode_e xmlStrToVal(char *apStr, void *apVal, xmlDataType_e aValTyp
         }
         case XML_DATA_TYPE_STRING:
         default:
-            memcpy(apVal, lpValStr, strlen(lpValStr));
+            snprintf(apVal, strlen(lpValStr) + 1, lpValStr); /* +1 for NULL character */
             XML_LOG_DBG("val=%s", (char *)apVal);
             break;
     }  
